@@ -5,14 +5,15 @@ import { Link, useParams } from 'react-router-dom';
 import classNames from 'classnames';
 
 
+
 const LAUNCH_QUERY = gql`
   query LaunchQuery($flight_number: Int!) {
-    launch(flight_number: $flight_number) {
+    launches(flight_number: $flight_number) {
       flight_number
-      mission_name
+      name
       launch_year
-      launch_success
-      launch_date_local
+      success
+      date_local
       rocket {
         rocket_id
         rocket_name
@@ -25,17 +26,18 @@ const LAUNCH_QUERY = gql`
 const Launch = () => {
     let { flight_number } = useParams();
     flight_number = parseInt(flight_number);
+    console.log(flight_number);
   return (
     <Fragment>
         <Query query={ LAUNCH_QUERY } variables={{flight_number}}>
             {
                 ({ loading, error, data }) => {
                     if(loading) return <h4>Loading...</h4>
-                    if(error) console.log(error);
-
-                    const {  mission_name, flight_number, launch_year, launch_success, rocket:{ rocket_id, rocket_name, rocket_type} } = data.launch;
+                    if(error) console.log(error, JSON.stringify(error, null))
+                    const {  name, flight_number, launch_year, success, rocket:{ rocket_id, rocket_name, rocket_type} } = data.launches;
+                    console.log(data.launches);
                     return <div>
-                        <h1 className="display-4 my-3"><span className='text-dark'>Mission:</span> { mission_name }</h1>
+                        <h1 className="display-4 my-3"><span className='text-dark'>Mission:</span> { name }</h1>
                         <h4 className="mb-3">Launch Details:</h4>
                         <ul className="list-group">
                             <li className="list-group-item">
@@ -46,9 +48,9 @@ const Launch = () => {
                             </li>
                             <li className="list-group-item">
                                 Launch Successful: <span className={classNames({
-                                    'text-success': launch_success,
-                                    'text-danger': !launch_success
-                                })}>{launch_success ? 'Yes' : 'No'}</span>
+                                    'text-success': success,
+                                    'text-danger': !success
+                                })}>{success ? 'Yes' : 'No'}</span>
                             </li>
                         </ul>
                         <h4 className="my-3">Rocket Details</h4>

@@ -8,9 +8,9 @@ const LAUNCHES_QUERY = gql`
 query LaunchesQuery {
     launches{
         flight_number
-        mission_name
-        launch_date_local
-        launch_success
+        name
+        date_local
+        success
     }
 }`;
 
@@ -23,8 +23,7 @@ const Launches = () => {
         {({ loading, error, data }) => {
           if (loading) return <h4>Loading...</h4>;
           if (error) console.log(error);
-
-          return <Fragment>
+          else return <Fragment>
             {
               data.launches.map(launch => (
                 <LaunchItem key={launch.flight_number} launch={launch} />

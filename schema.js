@@ -8,10 +8,10 @@ const LaunchType = new GraphQLObjectType ({
     name: 'Launch',
     fields: () => ({
         flight_number: {type: GraphQLInt },
-        mission_name: {type: GraphQLString },
+        name: {type: GraphQLString },
         launch_year: {type: GraphQLString },
-        launch_date_local: {type: GraphQLString},
-        launch_success: {type: GraphQLBoolean },
+        date_local: {type: GraphQLString},
+        success: {type: GraphQLBoolean },
         rocket: {type: RocketType }
     })
 });
@@ -35,7 +35,7 @@ const RootQuery = new GraphQLObjectType({
         launches: {
             type: new GraphQLList(LaunchType),
             resolve(parent, args) {
-                return axios.get('https://api.spacexdata.com/v3/launches')
+                return axios.get('https://api.spacexdata.com/v5/launches')
                 .then(res => res.data);
             }
         },
@@ -45,14 +45,14 @@ const RootQuery = new GraphQLObjectType({
                 flight_number: { type: GraphQLInt }
             },
             resolve(parent, args) {
-                return axios.get(`https://api.spacexdata.com/v3/launches/${args.flight_number}`)
+                return axios.get(`https://api.spacexdata.com/v5/launches/${args.flight_number}`)
                 .then(res => res.data);
             }
         },
         rockets: {
             type: new GraphQLList(RocketType),
             resolve(parent, args) {
-                return axios.get('https://api.spacexdata.com/v3/rockets')
+                return axios.get('https://api.spacexdata.com/v5/rockets')
                 .then(res => res.data);
             }
         },
@@ -62,7 +62,7 @@ const RootQuery = new GraphQLObjectType({
                 flight_number: { type: GraphQLInt }
             },
             resolve(parent, args) {
-                return axios.get(`https://api.spacexdata.com/v3/launches/${args.id}`)
+                return axios.get(`https://api.spacexdata.com/v5/launches/${args.id}`)
                 .then(res => res.data);
             }
         }

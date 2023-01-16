@@ -22,8 +22,8 @@ function App() {
             style={{ width: 300, margin: "auto", display: "block" }}
           />
           <Routes>
-          <Route path="/" element={ <Launches/> } exact></Route>
-          <Route path="/launch/:flight_number" element={ <Launch/> } exact></Route>
+          <Route path="/" element={ <Launches /> } exact></Route>
+          <Route path="/launch/:flight_number" element={ <Launch /> } exact></Route>
           </Routes>
         </div>
       </BrowserRouter>
