@@ -1,6 +1,6 @@
 # SpaceX Launches
 
-![Screenshot of SpaceX Launches](./assets/App%20page.png)
+![Screenshot of SpaceX Launches](./assets/Screen%20Shot%202023-01-16%20at%205.30.20%20PM.png)
 
 ## Purpose:
 To create an app that used an API call, with Apollo, GraphQL and React to display data on SpaceX launches. 
