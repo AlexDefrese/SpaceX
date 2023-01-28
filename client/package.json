@@ -20,6 +20,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "build": "react-scripts build && mv build ../public",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -30,6 +32,7 @@
       "react-app/jest"
     ]
   },
+  "homepage": "http://AlexDefrese.github.io/SpaceX",
   "browserslist": {
     "production": [
       ">0.2%",
