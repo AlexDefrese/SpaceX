@@ -25,7 +25,7 @@
   ### No installation needed, just go to the deployed link.
 
   ## <u>Usage:</u>
-  ### You cna navigate through the list of launches till you find theone you are looking for. From there it will display if it was successful or not, and what rocket was used during the launch. 
+  ### You can navigate through the list of launches till you find theone you are looking for. From there it will display if it was successful or not, and what rocket was used during the launch. 
 
   ## <u>Contributors:</u> 
   ### Alex Defrese
