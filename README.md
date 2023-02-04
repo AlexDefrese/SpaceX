@@ -1,23 +1,41 @@
-# SpaceX Launches
+ # <u>SpaceX</u>
 
-![Screenshot of SpaceX Launches](./assets/Screen%20Shot%202023-01-16%20at%205.30.20%20PM.png)
+  ![License](https://img.shields.io/badge/License-MIT-green.svg)
+  
 
-## Purpose:
-To create an app that used an API call, with Apollo, GraphQL and React to display data on SpaceX launches. 
+  ## <u>Table of Contents:</u>
+  ### [License](#license)
+  ### * [Description](#description)
+  ### * [Installation](#install)
+  ### * [Usage](#usage)
+  ### * [Contributors](#contributors)
+  ### * [Testing](#testing)
+  ### * [Questions](#questions)
 
-## Built With:
-- Apollo
-- GraphQL
-- React
-- Bootswatch
+  ![Screenshot of SpaceX Launches](./assets/Screen%20Shot%202023-01-16%20at%205.30.20%20PM.png)
 
-## Links
+  ## License
+  ### MIT
 
-Link to GitHub:
+  ## <u>Description</u>
+  ### This app lets you track past Space X launches, and find out additional information about those launches. 
 
-https://github.com/AlexDefrese/SpaceX
+  ## <u>Installation:</u>
+  ### Please follow these steps to install:
+  ### No installation needed, just go to the deployed link.
 
-Link to GitHub page:
+  ## <u>Usage:</u>
+  ### You cna navigate through the list of launches till you find theone you are looking for. From there it will display if it was successful or not, and what rocket was used during the launch. 
 
-## Contribution:
-Made by Alex Defrese
+  ## <u>Contributors:</u> 
+  ### Alex Defrese
+
+  ## <u>Testing:</u>
+  ### Please follow these steps to test the project:
+  ### No testing at this time. 
+
+  ## <u>Questions:</u> 
+  ### If you have any questions or suggestions, please contact me through either
+  ### GitHub: https://github.com/AlexDefrese
+  ### or
+  ### Email: aidandefrese@gmail.com
